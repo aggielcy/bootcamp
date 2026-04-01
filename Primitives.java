@@ -1,58 +1,108 @@
 public class Primitives {
-  public static void main(String[]args){
-
+    // RAM -> Stack,Heap Memory (Short Term) -> after main method complete
+  // the assigned memory will be released.
+  public static void main(String[] args) {
+    // int -> integer （整數)
+    // define "appleCount" -> store integer ONLY
+    
+    // appleCount -> variable (變量)
     int appleCount = 100;
 
-    double appleprice = 4.99;
+    // double -> with decimal
+
+    double applePrice = 4.99;
+
+    // Java -> Cannot convert different type of data directly. 
+    // int orangePrice = 10.99;
 
     System.out.println("hello");
-    System.out.println(appleCount);//100
-    System.out.println(appleprice);//4.99
 
-   // Primitive(raw data type)
-   // int,byte. short, long 
-   // double, float
-   // boolean  <--can only type true or false
-   // char <--single character, 6xxxxx, ' '
+    // Java Case-sensitive
+    System.out.println(appleCount); // 100
+    System.out.println(applePrice); // 4.99
 
-   boolean b1 = false;
-   boolean isElderly = true;
-   System.out.println(isElderly);
+    // Primitive (Raw Data Type)
+    // int, byte, short, long
+    // double, float
+    // boolean
+    // char
 
-   char c1 = 'a';
-   char c2 = 'i';
-   char c3 = '+';
-   // char c4 = 'easy';//more than one character , not ok, chinese character also ok
-   char c5 = ' ';
+    // true or false
+    boolean b1 = false;
+    boolean isElderly = true;
+    System.out.println(isElderly);
 
-   //Java-->integer()
-   int i1;
-   int i2 = 200;
-   int i3 = 2100000000;
-  // int i3 = 21000000000;
-   int age = 13;
-   
-   byte by1 = 127;
-   System.out.println(by1);
-   //byte by2 = 128
-   //System.out.println(by2) failed
+    // Single Character ONLY
+    // 6xxxx
+    // ' '
+    char c1 = 'a';
+    char c2 = '!';
+    char c3 = '+';
+    char c4 = '好';
+    char c5 = ' ';
+    // char c6 = '';
 
-   short s1 = 32767;
-   short s2 = -32768;
+    // Java -> Integer
 
-   int k1 = 1_000_000;
-   System.out.println(k1);
+    // Declaration
+    int i1;
 
-   double d1 = 100.99;
-   double d2 = 100.99d;
-   float f1 = 100.99f; 
- 
-   //float f2 = 100.99; failed
+    // Re-define same variable is not allowed
+    // double i1;
 
-   int i20 = 100;
-   long l20 = 200L;
-   System.out.println(i20);
+    // Assignment
+    i1 = 100;
 
+    // declare + assign
+    int i2 = 200;
 
+    // Assign fixed Memory for i1
+    // -2,1xx,xxx,xxx to 2,1xx,xxx,xxx
+    int i3 = 2100000000;
+    int age = 13;
+
+    // long 2^63
+    
+    // byte (-128 to 127)
+    byte by1 = 127;
+    byte by2 = -128;
+    // byte by3 = -129;
+
+    // short
+    // -32768 to 32767
+    short s1 = 32767;
+    short s2 = -32768;
+    // short s3 = -32769;
+
+    // 1,000,000
+    int k1 = 1_000_000;
+
+    // double, float
+    
+    // d1 (double variable)
+    // 100.99 (double value)
+    // 100.99d (double value)
+    // so, we can assign a double value into a double value
+    double d1 = 100.99;
+
+    // 100.99f (float value)
+    // f1 (float variable)
+    // so, we can assign a float value into a float variable
+    float f1 = 100.99f;
+
+    // You cannot assign a double value into a float variable
+    // float f2 = 100.99;
+
+    // 100 -> int value
+    // i20 -> int variable
+    // 100L -> long value
+    int i20 = 100;
+    long l20 = 200L;
+
+    // '9' -> char value
+    // c9 -> char variable
+    char c9 = '9';
+
+    // true/false -> boolean value
   }
 }

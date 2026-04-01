@@ -69,6 +69,6 @@ public class JavaExercise1 {
     int y = 4;
     int x = 2;
     int result = e - o * x / y;
-            System.out.println("The result is " + result);
+    System.out.println("The result is " + result);
   }
 }
