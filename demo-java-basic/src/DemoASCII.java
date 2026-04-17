@@ -9,11 +9,11 @@ public class DemoASCII {
 
     // 'C'
     int ascii2 = 'C';
-    System.out.println(ascii2);
+    System.out.println(ascii2); //67
 
     // '8'
     int ascii3 = '8';
-    System.out.println(ascii3);
+    System.out.println(ascii3); //56
 
     int ascii4 = '好';
     System.out.println(ascii4); // 22909

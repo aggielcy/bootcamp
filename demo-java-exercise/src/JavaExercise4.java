@@ -39,18 +39,40 @@ public class JavaExercise4 {
     switch (month) {
       case 1:
         number_Of_DaysInMonth = 31;
+        monthOfName = "January";
         break;
       case 2:
+        monthOfName = "February";
       case 3:
+        number_Of_DaysInMonth = 31;
+        monthOfName = "March";
       case 4:
+        number_Of_DaysInMonth = 30;
+        monthOfName = "April";
       case 5:
+        number_Of_DaysInMonth = 31;
+        monthOfName = "May";
       case 6:
+        number_Of_DaysInMonth = 30;
+        monthOfName = "June";
       case 7:
+        number_Of_DaysInMonth = 31;
+        monthOfName = "July";
       case 8:
+        number_Of_DaysInMonth = 31;
+        monthOfName = "August";
       case 9:
+        number_Of_DaysInMonth = 30;
+        monthOfName = "September";
       case 10:
+        number_Of_DaysInMonth = 31;
+        monthOfName = "October";
       case 11:
+        number_Of_DaysInMonth = 30;
+        monthOfName = "November";
       case 12:
+        number_Of_DaysInMonth = 31;
+        monthOfName = "December";
       default:
     }
     // Leap Year: The February has 29 days:

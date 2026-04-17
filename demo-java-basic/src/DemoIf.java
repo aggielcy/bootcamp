@@ -138,7 +138,7 @@ public class DemoIf {
 
     // Switch
     // 1. AND OR
-    // 2. Range checking
+    // 2. Range checking*
     // 3. break
     char gender = 'M';
     switch (gender) {
