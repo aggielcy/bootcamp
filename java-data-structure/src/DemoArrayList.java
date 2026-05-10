@@ -16,7 +16,7 @@ public class DemoArrayList {
       arr2[arr2.length-1] = "qwe";
       arr = arr2;
 
-      System.out.println(Arrays.toString(arr));
+      System.out.println(Arrays.toString(arr));//[abc, def, ijk, qwe]
 
       //Soultion
       //ArrayList --> Functionality;
@@ -25,11 +25,11 @@ public class DemoArrayList {
       strings.add("def");
       strings.add("ijk");
       strings.add("qwe");
-      System.out.println(strings.size());
-      System.out.println(strings.contains("def"));
+      System.out.println(strings.size()); //4
+      System.out.println(strings.contains("def")); //true 
 
-      strings.set(1,"leo");
-      System.out.println(strings);
+      strings.set(1,"leo"); 
+      System.out.println(strings); //[abc, leo, ijk, qwe]
       System.out.println(strings.getFirst());
       System.out.println(strings.getLast());
       System.out.println(strings.isEmpty());

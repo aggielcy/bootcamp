@@ -1,5 +1,3 @@
-package demo-java-oop.src;
-
 public class Week2Revision {
   public static void main(String[] args) {
     // Class - Attributes (private), Constructors (Create Object), Methods

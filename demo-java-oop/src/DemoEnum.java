@@ -1,4 +1,4 @@
-package demo-java-oop;
+
 
 public class DemoEnum{
   public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class DemoEnum{
 
     }
 
-    Colour red = Colour.RED;
+    Color red = Color.RED;
     
 
 
@@ -19,4 +19,4 @@ public class DemoEnum{
   }
 }
   
-}
+

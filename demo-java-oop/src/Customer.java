@@ -12,8 +12,31 @@ public class Customer {
   // isVip(), total amount for all orders > 100,000
   // true/ false
 
+  // constructor (建構者) -> produce object
+  // ! implicitly empty constructor
+  public Customer() {
+    System.out.println("Creating Customer...");
+    // ! advanced
+    this.orders = new Order[0];
+  }
+
+  public Customer(String firstName, String lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
   public Customer(Order[] orders) {
     this.orders = orders;
+  }
+
+  public void addOrder(Order newOrder) {
+    Order[] newOrders = new Order[this.orders.length + 1];
+    // loop original array
+    for (int i = 0; i < this.orders.length; i++) {
+      newOrders[i] = this.orders[i];
+    }
+    newOrders[newOrders.length - 1] = newOrder;
+    this.orders = newOrders;
   }
 
   public boolean isVip() {
@@ -28,16 +51,7 @@ public class Customer {
     return sum.doubleValue();
   }
 
-  // constructor (建構者) -> produce object
-  // ! implicitly empty constructor
-  public Customer() {
-    System.out.println("Creating Customer...");
-  }
 
-  public Customer(String firstName, String lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
 
   // ! More than One Constructor
   // Provide 4 values
@@ -66,6 +80,10 @@ public class Customer {
     return this.firstName;
   }
 
+  public Order[] getOrders() {
+    return this.orders;
+  }
+
   public static void main(String[] args) {
     // "new" -> produce object (call constructor)
     //
@@ -82,7 +100,7 @@ public class Customer {
 
     Customer c4 = new Customer();
     Order o1 = new Order();
-    
+
     // 2 orders
     // order 1: 2 items
     // order 2: 1 item
@@ -110,7 +128,12 @@ public class Customer {
     System.out.println(c10.totalOrderAmount()); // 449.0
     System.out.println(c10.isVip()); // false
 
+    // c10.addOrder(o10)
+
     // c4.isVip -> true
+    System.out.println(orders[1].getItems()[0].subTotal()); // 200.0
+
+    System.out.println(c10.getOrders()[0].getItems()[1].subTotal()); // 50
   }
-  
+
 }

@@ -36,6 +36,7 @@ public class DemoArray {
     // declare length 100 int array (0-99)
      int [] arr = new int [100];
      for (int i = 0; i < arr.length; i++) {
+      arr [i] = i;
       System.out.println(arr[i]);
      }
 
@@ -85,16 +86,20 @@ public class DemoArray {
      System.out.println(found); // true
 
 
-
+ // outer loop and inner loop
     found = false;
-    Outerloop: for (int i = 0; i<name.length(); i++){
-         for (int j = 0; j< chs2.length;j++){
-          if (name.charAt(i) == chs [j]);
+    for (int i = 0; i < name.length(); i++) { // outer loop (every char in the name)
+      for (int j = 0; j < chs2.length; j++) { // inner loop (every char in the chs2)
+        if (name.charAt(i) == chs2[j]) {
           found = true;
-          break Outerloop;
-         }
+          break; // break inner loop
+        }
       }
-      System.out.println("The latest answer: " + found);
+      if (found) {
+        break; // break outer loop
+      }
+    }
+    System.out.println(found); // true
 
       
       int [] arr2 = new int[] {100, 4, 99, 55, 17};

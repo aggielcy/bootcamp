@@ -30,7 +30,7 @@ public class DemoLoop {
     for (int i = 0; i < 10; i++) { // 0 - 9
       if (i % 2 == 0) {
         System.out.println(i);
-      } 
+      }
     }
 
     // Print the numbers between 0 - 99, which divided by 3, and it is greater than 50
@@ -51,16 +51,16 @@ public class DemoLoop {
         break; // break nearest loop
       }
     }
-    System.out.println(isTargetExists); 
+    System.out.println(isTargetExists);
 
     String s2 = "947852106"; // Find the largest even digit
-    
+
     int max = Integer.MIN_VALUE;
 
     for (int i = 0; i < s2.length(); i++) {
-      int digit = s2.charAt(i) - '0';
+      int digit = s2.charAt(i) - '0'; // String -String = int
       if (digit % 2 == 0 && digit > max) {
-          max = digit;
+        max = digit;
       }
     }
     System.out.println(max);
@@ -83,11 +83,18 @@ public class DemoLoop {
     // Find the largest index of the largest digit
     // 8
 
-    String s4 = "7225094849";
-    
+    String s4 = "725094849";
+    int largertDigit = Integer.MIN_VALUE;
+    for (int i = 0; i < s4.length(); i++) {
+      int digit2 = s4.charAt(i) - '0';
+      if (digit2 > largertDigit) {
+        largertDigit = digit2;
+      }
     }
-
-
+    System.out.println(largertDigit);
+    
 
 
   }
+
+}

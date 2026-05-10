@@ -13,7 +13,7 @@ public class DemoStringII {
     //== meaning it is check the same address
     //.equal() , checking the same value
     //Primitive is fine to use ==
-    //classs type is starting with capital letter 
+    //class type is starting with capital letter 
 
     
 

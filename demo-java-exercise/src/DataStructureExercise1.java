@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class DataStructureExercise1 {
   public static void main(String[] args) {
@@ -159,11 +160,16 @@ public class DataStructureExercise1 {
     ArrayList<Student>students = new ArrayList<>();
     students.add(new Student(1,"Alice"));
     students.add(new Student(2,"Bob"));
-    students.add(new Student(2,"Charlie"));
-    System.out.println(students);
+    students.add(new Student(3,"Charlie"));
+
+    for (Student a:students){
+      System.out.println(a);
+    }
+    
     
     students.remove(1);
-    System.out.println(students);   
+    System.out.println(students);
+   
 
 
     // Exercise 9: HashSet of Students
@@ -172,46 +178,81 @@ public class DataStructureExercise1 {
     // Set 2: Bob (ID: 2), Charlie (ID: 3), David (ID: 4)
     // 9b. Find the common students of the two sets
     // 9c. Print the result.
+    HashSet<Student> students1 = new HashSet<>();
+    students1.add(new Student(1, "Alice"));
+    students1.add(new Student(2, "Bob"));
+    students1.add(new Student(3, "Charlie"));
 
+    HashSet<Student> students2 = new HashSet<>();
+    students2.add(new Student(2, "Bob"));
+    students2.add(new Student(3, "Charlie"));
+    students2.add(new Student(4, "David"));
+
+    students1.retainAll(students2);
+
+    for (Student a : students1 ){
+      System.out.println(a);
+    }
+  
   }
+}
+
 
   public static class Student {
     private int id;
     private String name;
-
-    public Student(){
-    }
-
-    public Student(String name){
-    this.name =name;
-  }
-
-    public Student(int id, String name){
-    this.id = id;
-    this.name =name;
-  }
-  
-  public String getName(){
-    return this.name;
-  }
-
-    public int getid(){
-    return this.id;
-  }
-
+     
     // Constructor
     // getter, setter, etc.
 
-  public static void search(int id){
-    for (Student a : students){
-      if(a.new Student().getid().equals(id)){
-        System.out.println(a.new Student().getName);
-      }
-      System.out.println("Student not found");
+    public Student(int id, String name){      
+      this.id = id;
+      this.name =name;
+  }
+
+    public int getId(){
+      return this.id;
     }
+
+    public String getName(){
+      return this.name;
+    }
+
+    public void search(int id){
+      if(this.id != null){
+        String x = Student.getName();
+          System.out.println(x);
+      }
+     else System.out.println("Student not found.");
+     } 
+         
+    
+    
+    @Override
+    public boolean equals(Object obj){
+      if(this == obj){
+        return true;
+      }
+      if(!(obj instanceof Student)){
+        return false;
+      }
+      Student student = (Student)obj;
+      return this.name.equals(student.getName()) ;
+    }
+
+    @Override
+    public int hashCode(){
+      return Student.hash(this.name);
+    }
+
+    @Override
+    public String toString(){
+      return "Student("//
+      +"id= "+ this.id
+      +"name= " this.name
+      +")";
+    }
+
+    
   }
-
-
-
-  }
-}
+  

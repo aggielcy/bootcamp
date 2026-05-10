@@ -1,53 +1,66 @@
+// ! Immutable
 public enum Direction {
-  EAST(1, "EAST"), SOUTH(2, "South"), WEST(3,"West"),NORTH(4, "North"),;
-  
+  EAST(1, "East."), SOUTH(2, "South."), WEST(-1, "West."), NORTH(-2, "North."),;
+
+  // attribute
   private int value;
   private String desc;
 
-  private Direction (int value, String desc){
+  // Private Constructor
+  private Direction(int value, String desc) {
     this.value = value;
     this.desc = desc;
   }
 
-  public int getValue(){
+  // ! 99.99% , we won't use set method in enum.
+  public void setValue(int value) {
+    this.value = value;
+  }
+
+  // Presentation
+  // Direction.NORTH.oppsite() -> SOUTH
+  public Direction oppsite() {
+    for (Direction d : Direction.values()) {
+      if (this.value * -1 == d.getValue()) {
+        return d;
+      }
+    }
+    return null;
+  }
+
+  public int getValue() {
     return this.value;
   }
 
-  public String getDesc(){
+  public String getDesc() {
     return this.desc;
   }
 
-  public Direction oppsite(){
-    for(Direction d: Direction.values()){
-      if(this.value * -1 == d.getValue()){
-        
-      }
+  public static void main(String[] args) {
+    Direction d1 = Direction.SOUTH;
+    System.out.println(d1.getValue()); // 2
+
+    System.out.println(Direction.SOUTH.getValue()); // 2
+    System.out.println(Direction.SOUTH.getDesc()); // South.
+
+    // ! For-each loop
+    for (Direction d : Direction.values()) {
+      System.out.println(d.getDesc());
     }
-  }
 
+    System.out.println(Direction.NORTH.oppsite()); // SOUTH
 
-
-public static void main(String[] args) {
-  Direction d1 = Direction.SOUTH;
-  System.out.println(d1.getValue()); //2
-
-  System.out.println(Direction.SOUTH.getDesc());
-  for(Direction d: Direction.values()){    //loop num need to .value = array
-    System.out.println(d.getDesc());
-  }
-
-    int [] arr = new int []{4, 9, -5};
-    for (int i= 0; i< arr.length; i++){
+    // ! Other examples (for-each)
+    int[] arr = new int[] {4, 9, -5};
+    for (int i = 0; i < arr.length; i++) { // flexible to control iteration
       System.out.println(arr[i]);
     }
-
-    for (int x : arr ){
+    for (int x : arr) { // Loop through all elements
       System.out.println(x);
-
     }
 
-
-
-}
-
+    Direction.EAST.setValue(100);
+    System.out.println(Direction.EAST.getValue()); // 100
+    
+  }
 }

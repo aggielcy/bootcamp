@@ -1,88 +1,97 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class DemoMath {
-  public static void main(String[] args) {
-
-    public static boolean isDuplicated (int[] arr, int newNumber){
-      for (int i =0 ; i<arr.length;  i++){
-        if(arr[i] == newNumber ){
-          return true;
-        }
-        return false
+  // Tool
+  public static boolean isDuplicated(int[] arr, int newNumber) { // input
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] == newNumber) {
+        return true;
       }
     }
-    
+    return false;
+  }
 
-    //! PI
+  public static void main(String[] args) {
+    // ! PI
     double pi = Math.PI;
+    // circle area
     double radius = 3.5;
-    double area = radius *radius * Math.PI;
+    double area = radius * radius * Math.PI;
     System.out.println(area);
 
-    //! sqrt
-    System.out.println(Math.sqrt(9)); // 3
-    System.out.println(Math.sqrt(81)); // 9
-    System.out.println(Math.sqrt(80)); // 8.944
+    // ! sqrt
+    System.out.println(Math.sqrt(9)); // 3.0
+    System.out.println(Math.sqrt(81)); // 9.0
+    System.out.println(Math.sqrt(80)); // 8.94427190999916
 
-    //!round
+    // ! round
     System.out.println(Math.round(10.453)); // 10
-    System.out.println(Math.round(10.453)); // 11
+    System.out.println(Math.round(10.543)); // 11
 
+    // ! pow
+    double result = Math.pow(2, 3); // implicit promotion , int -> double
+    System.out.println(Math.pow(2.333, 2.5)); // 8.313556391492568
+    System.out.println(result); // 8.0
 
-    //!pow to the power of 
-    double result = Math.pow(2, 3); // implicit promotion , so put integer promote double
-    System.out.println(result); // 2*2*2
-
-
-    double bmi = 76 / Math.pow(1.76, 2);
+    double bmi = 76 / Math.pow(1.76, 2); // int / double -> double
     System.out.println(bmi);
 
-    //!abs --> change to positive 
-    int x = -2; 
-    System.out.println(Math.abs(x)); // 2
+    // ! abs
+    int x = -2; // 2 / -2
+    if (x < 0) {
+      x = x * -1;
+    }
+    System.out.println(x); // 2
 
-    // ! Max/Min
-    int[]arr = new int[]{10, 4, 8, 99,-2};
+    int y = -3;
+    System.out.println(Math.abs(y)); // 3
+
+    // ! max/ min
+    int[] arr = new int[] {10, 4, 8, 99, -2};
+    // find max
     int max = arr[0];
+    int min = arr[0];
     for (int i = 0; i < arr.length; i++) {
-       max = Math.max (arr[i], max);
-       }
-    
-    //! floor, ceil
-    System.out.println(Math.floor(10.9));//10.0
-    System.out.println(Math.ceil(10.1)); //11.0
+      max = Math.max(arr[i], max);
+      min = Math.min(arr[i], min);
+    }
+    // python arr.max -> 99 (loop)
+    // python arr.min -> -2 (loop)
 
-    //random
-     double number = Math.random(); // 0-1
-     System.out.println(number); 
+    // ! floor, ceil
+    System.out.println(Math.floor(10.9)); // 10.0
+    System.out.println(Math.ceil(10.1)); // 11.0
 
-       int [] answers = new int [6];
-       new idx = 0;
-       for (int i = 0; i < 6; i++){
-        int num = new Random().nextInt()+1;
-        boolean found = false;
-        if(int j =0 ; j<=idx; j++){
-          if (answer[j] == num){
-            found =true;
-            break;
-          }
-        }
-        if (found){
-          continue;          
-        } else {
-          answer[idx++] = num;
-        }
-        
-       }
+    // ! random
+    double number = Math.random(); // 0 - 1
+    System.out.println(number);
 
-       int num = new random ().nextIn(3);//0-2
-       System.out.println(num); 
-  
+    // 100 - 1100
+    // (Math.random() * 1000) + 100;
 
-       Arrays.sort(answers);
+    // Assignment
+    // 1 - 49 (random)
+    // output: int[] -> 6 numbers (marksix) (no Duplicate)
+
+    int[] answers = new int[6];
+    int idx = 0;
+    // ! While Loop handles uncertain elapse time for end loop
+    while (idx <= 5) {
+      // ! Get a number
+      int num = new Random().nextInt(49) + 1;
+      if (isDuplicated(answers, num)) {
+        continue; // ! Skip the rest, go to the next iteration
+      } else {
+        // ! place num to answers
+        answers[idx++] = num; // 0-5
       }
+    }
+    System.out.println(Arrays.toString(answers));
 
-
+    // Java Sorting
+    // Bubble Sort (inner loop), sort n numbers -> n^2 iterations
+    Arrays.sort(answers); // sort n numbers -> n * logn (logn < n)
+    System.out.println(Arrays.toString(answers));
   }
-  
-
+}

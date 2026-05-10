@@ -1,3 +1,3 @@
-public enum SUITE {
+public enum Suite {
   DIAMOND, CLUB, HEART, SPADE,;
 }

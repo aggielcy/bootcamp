@@ -1,4 +1,5 @@
 public class DemoASCII {
+  
   public static void main(String[] args) {
     // char (0-65535) -> int (21xxxxx)
     char c1 = 'a';
@@ -9,11 +10,11 @@ public class DemoASCII {
 
     // 'C'
     int ascii2 = 'C';
-    System.out.println(ascii2); //67
+    System.out.println(ascii2);
 
     // '8'
     int ascii3 = '8';
-    System.out.println(ascii3); //56
+    System.out.println(ascii3);
 
     int ascii4 = '好';
     System.out.println(ascii4); // 22909

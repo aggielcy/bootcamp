@@ -2,16 +2,17 @@
 // Object
 // ! APIE: Inheritance
 // Animal is a Parent Class
-public abstract class Animal {
+public abstract class Animal {   
+  //abstract meaning Parent class, which we will not new an object Animal 
   // ! Common Attributes
   private String name;
   private int age;
 
-  public Animal() {
+  public Animal() {   //NoArgsConstructor , can write or skip
 
   }
   
-  public Animal(String name, int age) {
+  public Animal(String name, int age) {    //AllArgsConstructor , can new an object
     this.name = name;
     this.age = age;
   }
